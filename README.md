@@ -48,5 +48,6 @@ Reto uno alura latam ONE conversor multipropósito para afianzar conocimientos a
         ├── App.java
         └── Paneles.java
 ```
-
+### Diagrama clases UML
+![uml](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/45924063-d4c3-4dbe-85df-18e4c8973f69)
 
