@@ -21,7 +21,7 @@ import java.time.LocalDate;
 final class MyMenu extends JFrame{
     
     
-    private String[] items = {"Divisas","Temperatura","Longitud","Datos"};
+    private String[] items = {"Divisas","Temperatura","Longitud","Datos","Informacion"};
     private JLabel[] labes = new JLabel[items.length];
     //paneles
     private HorizontalPanel panelHorizontal = new HorizontalPanel();
@@ -41,15 +41,26 @@ final class MyMenu extends JFrame{
     private JLabel logoOne = new JLabel(new ImageIcon("src/images/one.png"));
     private JLabel textoLabel[] = new JLabel[3];
 
+
     MyMenu(){
        
         //render labes para horizontal y vertical items
         for (int i=0; i<labes.length; i++) {
             labes[i] =  new JLabel(items[i]); 
             panelHorizontal.setItemMenu(labes[i]);
-            setEventMouseLabel(i);
+            if(i<(labes.length-1)){
+                setEventMouseLabel(i);
+            }
+           
             
         }
+        
+        labes[labes.length-1].addMouseListener(new MouseAdapter(){
+             @Override
+             public void mouseClicked(MouseEvent event){
+                mostrarContenido(false);
+             }
+        });
         
         
         labelTitulo.setBounds(180, 150, 50, 30);
@@ -74,21 +85,7 @@ final class MyMenu extends JFrame{
         setEventoResultado(mostrarResultadoReverso, field, true);
          
         if(labelTitulo.getText().length()<=0){
-
-            labelTitulo.setVisible(false);
-            deLabel.setVisible(false);
-            paraLabel.setVisible(false);
-            boxes[0].setVisible(false);
-            boxes[1].setVisible(false);
-            field.setVisible(false);
-            mostrarResultado.setVisible(false);
-            mostrarResultadoReverso.setVisible(false);
-
-            panelVertical.add(panelVertical.setEncabezado("main.png", "Alura"));
-            panelVertical.add(panelVertical.setCerrarMinimizar(cerraJframe(), minimizarJframe()));
-
             logoOne.setBounds(320,200, 200, 60);
-
             for(int i=0; i<textoLabel.length; i++){
                 textoLabel[i] = new JLabel();
                 
@@ -100,13 +97,10 @@ final class MyMenu extends JFrame{
             textoLabel[1].setText("Grupo 5 Año 2023"); 
             textoLabel[2].setBounds(350, 290, 200, 100);
             textoLabel[2].setText(String.format("Fecha: %s",LocalDate.now())); 
-                                           
-
-
+            mostrarContenido(false);
         }
 
-        
-        
+    
         add(labelTitulo);
         add(field);
         add(deLabel);
@@ -121,6 +115,7 @@ final class MyMenu extends JFrame{
         add(textoLabel[0]);
         add(textoLabel[1]);
         add(textoLabel[2]);
+ 
 
 
         setUndecorated(true);
@@ -167,7 +162,7 @@ final class MyMenu extends JFrame{
                panelVertical.revalidate();
                panelVertical.repaint();
                 
-               mostrarContenido();
+               mostrarContenido(true);
 
                labes[index].setText("");
                labes[index].setText(items[index]);
@@ -212,20 +207,49 @@ final class MyMenu extends JFrame{
         }
     }
 
-    private void mostrarContenido(){
+    private void mostrarContenido(boolean accion){
 
+        if(accion){
             labelTitulo.setVisible(true);
             deLabel.setVisible(true);
             paraLabel.setVisible(true);
             boxes[0].setVisible(true);
             boxes[1].setVisible(true);
             field.setVisible(true);
-            textoLabel[0].setVisible(false);
-            textoLabel[1].setVisible(false);
-            textoLabel[2].setVisible(false);
+            for(int i=0; i<textoLabel.length; i++){
+                textoLabel[i].setVisible(false);
+                
+            } 
             logoOne.setVisible(false);
             mostrarResultado.setVisible(true);
-            mostrarResultadoReverso.setVisible(true);
+            mostrarResultadoReverso.setVisible(true); 
+
+        }else{
+            panelVertical.removeAll();
+            panelVertical.revalidate();
+            panelVertical.repaint();
+
+            labelTitulo.setVisible(false);
+            deLabel.setVisible(false);
+            paraLabel.setVisible(false);
+            boxes[0].setVisible(false);
+            boxes[1].setVisible(false);
+            field.setVisible(false);
+            mostrarResultado.setVisible(false);
+            mostrarResultadoReverso.setVisible(false);
+
+            panelVertical.add(panelVertical.setEncabezado("main.png", "Alura"));
+            panelVertical.add(panelVertical.setCerrarMinimizar(cerraJframe(), minimizarJframe()));
+            for(int i=0; i<textoLabel.length; i++){
+                textoLabel[i].setVisible(true);
+                
+            } 
+            logoOne.setVisible(true);
+
+            
+                                           
+        }   
+            
     }
 
     private void setEventoResultado(JLabel boton,JTextField field, boolean accionReveso){
