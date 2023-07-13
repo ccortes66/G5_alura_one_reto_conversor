@@ -4,6 +4,9 @@ Reto uno alura latam ONE conversor multipropósito para afianzar conocimientos a
 ### Funcionamiento
 ![func](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/84663b8f-645b-4f46-a5e8-33dd3b949103)
 
+### Excepciones
+![Excepciones](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/a53c0655-6c9a-4f12-bd6e-fa7a6acd1e2f)
+
 
 ### Tecnologías
 - Visual studios code (IDE)
