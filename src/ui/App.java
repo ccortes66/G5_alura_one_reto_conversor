@@ -117,7 +117,7 @@ final class MyMenu extends JFrame{
         add(textoLabel[2]);
  
 
-
+        
         setUndecorated(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
