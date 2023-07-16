@@ -7,7 +7,8 @@ Reto uno alura latam ONE conversor multipropósito para afianzar conocimientos a
 
 
 ### Excepciones
-[Screencast_20230713_143421.webm](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/08116918-1fad-4ad7-8990-8ed004fd8b5f)
+[Screencast_20230713_143421.webm](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/000e1d29-90da-4dcc-89d9-35badd4de0bd)
+
 
 
 
