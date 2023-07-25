@@ -20,7 +20,7 @@ public final class Database {
                                                  "Terabyte","Petabyte","Exabyte","Zettabyte",
                                                  "Yottabyte"};
    
-   public final static String[] NOMBRE_DIVISAS =  {"Dólares","Euros","Pesos Colombinos",
+   public final static String[] NOMBRE_DIVISAS =  {"Dólares","Euros","Pesos Colombianos",
                                                    "Libras Esterlinas","Real brasileño",
                                                     "Won Surcoreano","Yen Japonés"};
    
@@ -67,7 +67,6 @@ public final class Database {
          longitud.add(new Longitud(Longitud.unidades[i],
                                    Longitud.unidades[j],
                                    10,
-                                   true,
                                    new int[]{Database.prioridades[i],Database.prioridades[j],i,j}));  
         }
       } 
@@ -81,8 +80,7 @@ public final class Database {
         for(int j=0; j<Datos.tamanos.length; j++){
          datos.add(new Datos(Datos.tamanos[i],
                              Datos.tamanos[j],
-                             1024,
-                             false,
+                             1000,
                              new int[]{i,j,i,j}));  
         }
       } 

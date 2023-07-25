@@ -10,13 +10,11 @@ public class Longitud extends Medida {
     public Longitud(String valorDesde, 
                     String valorPara, 
                     double baseOperacion,
-                    boolean formateAction, 
                     int[] valoresPrioridadEindice) 
     {
         super(valorDesde, 
               valorPara, 
               baseOperacion, 
-              formateAction,
               valoresPrioridadEindice);
         super.setNombres(Database.NOMBRE_LONGITUD.clone());
         

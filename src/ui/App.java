@@ -265,11 +265,21 @@ final class MyMenu extends JFrame{
                 throw new ExcepcionesConversor.CampoVacio(sms);
             }
 
-            if(!field.getText().matches("^[0-9]+$"))
+            if(!field.getText().matches("^[0-9]+$") &&
+               !labelTitulo.getText().equals("Grado"))
+
             {   sms = String.format("%s... Valor no válido", (field.getText().length() < 3) ? field.getText() 
                                                                                                    : field.getText().substring(0, 3));
                 JOptionPane.showMessageDialog(null, sms,"Conversor Alura", JOptionPane.ERROR_MESSAGE);
                 throw new ExcepcionesConversor.ValorInvalido(sms);
+
+            }else if(!field.getText().matches("^[0-9-.]+$"))
+            { 
+                sms = String.format("%s... Valor no válido", (field.getText().length() < 3) ? field.getText() 
+                                                                                                   : field.getText().substring(0, 3));
+                JOptionPane.showMessageDialog(null, sms,"Conversor Alura", JOptionPane.ERROR_MESSAGE);
+                throw new ExcepcionesConversor.ValorInvalido(sms);
+
             }
 
             if(boxes[0].getSelectedItem().equals(boxes[1].getSelectedItem()))
