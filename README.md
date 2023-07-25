@@ -2,13 +2,12 @@
 Reto uno alura latam ONE conversor multipropósito para afianzar conocimientos adquiridos java se
 
 ### Funcionamiento
-[Screencast_20230716_123754.webm](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/b48b11c5-1b33-4fcd-aa7d-65473d5d896e)
+[Screencast_20230725_125937.webm](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/4eeef3a3-224f-4289-a970-b9ae71a4f57c)
 
 
 
 ### Excepciones
 [Screencast_20230713_143421.webm](https://github.com/ccortes66/G5_alura_one_reto_conversor/assets/63931313/000e1d29-90da-4dcc-89d9-35badd4de0bd)
-
 
 
 
